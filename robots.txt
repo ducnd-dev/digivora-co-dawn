@@ -1,0 +1,101 @@
+# https://www.robotstxt.org/robotstxt.html
+# robots.txt cho theme Digivora (Shopify) - Digivora.co
+
+User-agent: *
+Allow: /
+
+# Không index các URL nhạy cảm (checkout, giỏ hàng, tài khoản)
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /orders
+Disallow: /account/
+Disallow: /addresses
+Disallow: /login
+Disallow: /search
+Disallow: /collections/*sort_by*
+Disallow: /*/collections/*sort_by*
+Disallow: /collections/*?*page=
+Disallow: /*/collections/*?*page=
+Disallow: /blogs/*+*
+Disallow: /blogs/*%2B*
+Disallow: /blogs/*%2b*
+Disallow: /*?*oseid=*
+Disallow: /*preview_theme_id*
+Disallow: /*preview_script_id*
+
+# Cho phép bot AI crawl để tăng khả năng xuất hiện trên AI search (ChatGPT, Claude, Perplexity, Google AI...)
+User-agent: GPTBot
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Anthropic-AI
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Cohere-AI
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Bytespider
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+# Sitemap
+Sitemap: https://digivora.co/sitemap.xml
