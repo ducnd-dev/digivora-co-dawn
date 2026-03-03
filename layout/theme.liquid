@@ -24,6 +24,22 @@
 
     <meta name="description" content="{{ page_description | default: shop.description | default: shop.name | escape }}">
 
+    {%- comment -%} SEO: noindex cho tagged, filter, paginated; mặc định index, follow {%- endcomment -%}
+    {%- liquid
+      assign robots_noindex = false
+      if current_tags != blank
+        assign robots_noindex = true
+      endif
+      if current_page != 1
+        assign robots_noindex = true
+      endif
+    -%}
+    {%- if robots_noindex -%}
+      <meta name="robots" content="noindex, follow">
+    {%- else -%}
+      <meta name="robots" content="index, follow">
+    {%- endif -%}
+
     {% render 'meta-tags' %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>

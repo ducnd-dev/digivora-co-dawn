@@ -24,9 +24,10 @@ Disallow: /*?*oseid=*
 Disallow: /*preview_theme_id*
 Disallow: /*preview_script_id*
 
-# Cho phép bot AI crawl để tăng khả năng xuất hiện trên AI search (ChatGPT, Claude, Perplexity, Google AI...)
+# Cho phép tất cả bot AI crawl (ChatGPT, Gemini, Grok, DeepSearch/Bing, Claude, Perplexity, Apple Intelligence, ...)
+# Bing/DeepSearch dùng bingbot – đã được phép bởi "User-agent: *" ở trên.
 
-# OpenAI – crawler dùng cho ChatGPT Search (quan trọng để ChatGPT tìm được site)
+# OpenAI – ChatGPT Search
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /cart
@@ -100,6 +101,46 @@ Disallow: /orders
 Disallow: /login
 
 User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+# Google – Gemini (AI search + Deep Research)
+User-agent: Gemini-Deep-Research
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+# xAI – Grok
+User-agent: xAIBot
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+# Common Crawl (dùng cho nhiều bộ dữ liệu AI)
+User-agent: CCBot
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
+# Apple – Apple Intelligence
+User-agent: Applebot-Extended
 Allow: /
 Disallow: /cart
 Disallow: /checkouts/
