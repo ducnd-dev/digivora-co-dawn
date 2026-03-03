@@ -25,6 +25,17 @@ Disallow: /*preview_theme_id*
 Disallow: /*preview_script_id*
 
 # Cho phép bot AI crawl để tăng khả năng xuất hiện trên AI search (ChatGPT, Claude, Perplexity, Google AI...)
+
+# OpenAI – crawler dùng cho ChatGPT Search (quan trọng để ChatGPT tìm được site)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /cart
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account/
+Disallow: /orders
+Disallow: /login
+
 User-agent: GPTBot
 Allow: /
 Disallow: /cart
