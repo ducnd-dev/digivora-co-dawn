@@ -162,13 +162,13 @@
         "disabled": false,
         "settings": {}
       },
-      "1092553828153919622": {
-        "type": "shopify://apps/analyzely/blocks/consent-banner/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
-        "disabled": true,
-        "settings": {}
-      },
       "13694372020385051692": {
         "type": "shopify://apps/analyzely/blocks/analyzely/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
+        "disabled": false,
+        "settings": {}
+      },
+      "1092553828153919622": {
+        "type": "shopify://apps/analyzely/blocks/consent-banner/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
         "disabled": false,
         "settings": {}
       }
