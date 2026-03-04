@@ -55,6 +55,10 @@
       "next_slide": "Trượt sang phải",
       "previous_slide": "Trượt sang trái",
       "name": "Thanh trượt"
+    },
+    "breadcrumb": {
+      "home": "Trang chủ",
+      "label": "Đường dẫn"
     }
   },
   "newsletter": {

@@ -1,6 +1,8 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'component-breadcrumb.css' | asset_url | stylesheet_tag }}
 
 <article class="article-template">
+  {% render 'breadcrumb' %}
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}

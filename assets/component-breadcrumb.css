@@ -1,0 +1,57 @@
+/* Breadcrumb – SEO checklist #36, BreadcrumbList schema */
+
+.breadcrumb {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb__item:not(:last-child)::after {
+  content: '/';
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  color: rgba(var(--color-foreground), 0.4);
+  pointer-events: none;
+}
+
+.breadcrumb__link {
+  color: rgb(var(--color-link));
+  text-underline-offset: 0.3rem;
+}
+
+.breadcrumb__link:hover {
+  color: rgb(var(--color-foreground));
+}
+
+.breadcrumb__item--current span {
+  color: rgb(var(--color-foreground));
+  font-weight: 500;
+}
+
+@media screen and (min-width: 750px) {
+  .breadcrumb {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .breadcrumb__list {
+    font-size: 1.3rem;
+  }
+}
