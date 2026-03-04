@@ -329,7 +329,12 @@
       }
     },
     "footer": {
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "blocks": {
+        "blog_link": {
+          "heading": "Blog"
+        }
+      }
     },
     "featured_blog": {
       "view_all": "View all",
