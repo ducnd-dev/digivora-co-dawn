@@ -737,6 +737,25 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+    {%- comment -%} GSC: aggregateRating cho rich results (sao đánh giá trên SERP) khi có review {%- endcomment -%}
+    {%- if product.metafields.reviews.rating.value != blank and product.metafields.reviews.rating_count != blank -%}
+      {%- assign rating_count_num = product.metafields.reviews.rating_count | plus: 0 -%}
+      {%- if rating_count_num > 0 -%}
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": {{ request.origin | append: product.url | json }},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ product.metafields.reviews.rating.value.rating | default: product.metafields.reviews.rating.value | round: 2 | json }},
+    "reviewCount": {{ rating_count_num | json }},
+    "bestRating": {{ product.metafields.reviews.rating.value.scale_max | default: 5 | json }}
+  }
+}
+    </script>
+      {%- endif -%}
+    {%- endif -%}
   </div>
 </product-info>
 
