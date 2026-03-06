@@ -1,0 +1,44 @@
+{%- comment -%}
+  Keep Shopify default robots rules so Shopify can update them over time.
+{%- endcomment -%}
+{%- for group in robots.default_groups -%}
+{{- group.user_agent -}}
+
+{%- for rule in group.rules -%}
+{{ rule }}
+{%- endfor -%}
+
+{%- if group.sitemap != blank -%}
+{{ group.sitemap }}
+{%- endif -%}
+
+{%- endfor -%}
+
+# --- START: Custom Rules ---
+
+# --- AI Crawlers / AI Search bots ---
+User-agent: OAI-SearchBot
+User-agent: GPTBot
+User-agent: Google-Extended
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: Anthropic-Bot
+User-agent: Anthropic-AI
+User-agent: PerplexityBot
+User-agent: Cohere-AI
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+User-agent: xAIBot
+User-agent: CCBot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /cart
+Disallow: /carts/
+Disallow: /checkout
+Disallow: /checkouts/
+Disallow: /account
+Disallow: /orders
+Disallow: /admin
+Disallow: /password
+
+# --- END: Custom Rules ---
