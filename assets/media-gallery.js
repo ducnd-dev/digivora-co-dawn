@@ -13,10 +13,17 @@ if (!customElements.get('media-gallery')) {
         if (!this.elements.thumbnails) return;
 
         this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
+        this.thumbnailHoverDelay = 200;
         this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
-          mediaToSwitch
-            .querySelector('button')
-            .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
+          const btn = mediaToSwitch.querySelector('button');
+          const mediaId = mediaToSwitch.dataset.target;
+          btn.addEventListener('click', () => this.setActiveMedia(mediaId, false));
+          /* D2-02: Hover thumbnail → change main image smoothly */
+          let hoverTimer;
+          mediaToSwitch.addEventListener('mouseenter', () => {
+            hoverTimer = setTimeout(() => this.setActiveMedia(mediaId, false), this.thumbnailHoverDelay);
+          });
+          mediaToSwitch.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
         });
         if (this.dataset.desktopLayout.includes('thumbnail') && this.mql.matches) this.removeListSemantic();
       }

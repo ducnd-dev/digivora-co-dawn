@@ -41,6 +41,19 @@
   }
 }
 
+/* D2-03: Hero/block — subtle hover zoom for product presentation */
+.banner__media:not(.animate--zoom-in) {
+  overflow: hidden;
+}
+.banner__media:not(.animate--zoom-in) img {
+  transition: transform var(--duration-medium, 300ms) ease;
+}
+@media (hover: hover) {
+  .banner:hover .banner__media:not(.animate--zoom-in) img {
+    transform: scale(1.03);
+  }
+}
+
 .banner__media.animate--zoom-in {
   clip-path: inset(0px);
 }

@@ -6,6 +6,10 @@
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  /* D4-03: UI transition 200–300ms for interactions */
+  --duration-ui: 250ms;
+  /* D4-01: Border/radius consistency — card, button, input use --*-radius in theme settings */
+  /* D1-01: Color & typography — override --font-heading-*, --color-* in Theme settings for brand */
 }
 
 .product-card-wrapper .card,
@@ -347,6 +351,12 @@ h5,
     font-size: calc(var(--font-heading-scale) * 1.3rem);
   }
 }
+
+/* D1-02: Spacing & hierarchy — consistent H1→H2→H3 rhythm */
+h1, .h1 { margin-top: 0; margin-bottom: 0.5em; }
+h2, .h2 { margin-top: 1.25em; margin-bottom: 0.5em; }
+h3, .h3 { margin-top: 1em; margin-bottom: 0.4em; }
+h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child { margin-top: 0; }
 
 h6,
 .h6 {
@@ -1221,7 +1231,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 1.5rem;
   text-decoration: none;
   color: rgb(var(--color-button-text));
-  transition: box-shadow var(--duration-short) ease;
+  transition: box-shadow var(--duration-short) ease, opacity var(--duration-ui) ease-out, transform var(--duration-ui) ease-out;
   -webkit-appearance: none;
   appearance: none;
   background-color: rgba(var(--color-button), var(--alpha-button-background));

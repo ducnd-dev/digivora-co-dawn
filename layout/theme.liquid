@@ -29,13 +29,16 @@
 
     <meta name="description" content="{{ page_description | default: shop.description | default: shop.name | escape }}">
 
-    {%- comment -%} SEO: noindex cho tagged, filter, paginated; mặc định index, follow {%- endcomment -%}
+    {%- comment -%} SEO: noindex cho tagged, filter, paginated, empty collection; default index, follow {%- endcomment -%}
     {%- liquid
       assign robots_noindex = false
       if current_tags != blank
         assign robots_noindex = true
       endif
       if current_page != 1
+        assign robots_noindex = true
+      endif
+      if request.page_type == 'collection' and collection and collection.products.size == 0
         assign robots_noindex = true
       endif
     -%}
