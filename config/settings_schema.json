@@ -1451,5 +1451,17 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Trust & reviews",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_google_customer_reviews_badge",
+        "label": "Show Google Customer Reviews badge",
+        "info": "Turn off during GMC appeal or if not enrolled in Google Customer Reviews.",
+        "default": true
+      }
+    ]
   }
 ]

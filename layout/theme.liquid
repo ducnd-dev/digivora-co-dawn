@@ -396,7 +396,9 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {%- comment -%} Google Customer Reviews Badge (seller rating) {%- endcomment -%}
-    {% render 'google-customer-reviews-badge' %}
+    {%- comment -%} Google Customer Reviews Badge – tắt trong Theme settings nếu cần (GMC appeal) {%- endcomment -%}
+    {%- if settings.show_google_customer_reviews_badge -%}
+      {% render 'google-customer-reviews-badge' %}
+    {%- endif -%}
   </body>
 </html>
