@@ -1,0 +1,21 @@
+{%- comment -%}
+  Google Customer Reviews Badge – hiển thị seller rating và tham gia chương trình.
+  Optional: position = RIGHT_BOTTOM | LEFT_BOTTOM | INLINE
+  Optional: region = mã vùng (bỏ qua thì dùng tự động theo locale)
+{%- endcomment -%}
+<script id="merchantWidgetScript" src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+<script>
+  (function() {
+    var el = document.getElementById('merchantWidgetScript');
+    if (el) {
+      el.addEventListener('load', function () {
+        if (typeof merchantwidget !== 'undefined') {
+          merchantwidget.start({
+            merchant_id: 5738965892,
+            position: 'RIGHT_BOTTOM'
+          });
+        }
+      });
+    }
+  })();
+</script>

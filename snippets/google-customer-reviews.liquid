@@ -1,0 +1,32 @@
+{%- comment -%}
+  Google Customer Reviews (Survey Opt-in)
+  Dùng trên trang Order status (Thank you page).
+  Cách dùng: Copy toàn bộ nội dung file này vào:
+  Shopify Admin → Settings → Checkout → Order status page → Additional scripts
+{%- endcomment -%}
+{%- liquid
+  assign gcr_order_id = checkout.order_id | default: checkout.order_number | default: checkout.name
+  assign gcr_email = checkout.email
+  assign gcr_country = checkout.shipping_address.country_code | default: checkout.billing_address.country_code | default: 'US'
+  assign now_epoch = 'now' | date: '%s'
+  assign delivery_epoch = now_epoch | plus: 604800
+  assign gcr_delivery_date = delivery_epoch | date: '%Y-%m-%d'
+-%}
+{%- if gcr_order_id != blank and gcr_email != blank -%}
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+<script>
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          "merchant_id": 5738965892,
+          "order_id": "{{ gcr_order_id | escape }}",
+          "email": "{{ gcr_email | escape }}",
+          "delivery_country": "{{ gcr_country | escape }}",
+          "estimated_delivery_date": "{{ gcr_delivery_date }}",
+          "products": [{%- assign first_gtin = true -%}{%- for line_item in checkout.line_items -%}{%- if line_item.variant.barcode != blank -%}{%- unless first_gtin -%},{%- endunless -%}{"gtin":"{{ line_item.variant.barcode | escape }}"}{%- assign first_gtin = false -%}{%- endif -%}{%- endfor -%}]
+        });
+    });
+  };
+</script>
+{%- endif -%}
