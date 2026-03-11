@@ -388,10 +388,16 @@
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.3);
 }
 
+/* D2-01: Product card hover — ~200ms, scale 1.03, smooth Quick add; no layout shift */
 @media screen and (min-width: 990px) {
   .card .media.media--hover-effect > img:only-child,
   .card-wrapper .media.media--hover-effect > img:only-child {
-    transition: transform var(--duration-long) ease;
+    transition: transform var(--duration-ui, 250ms) ease-out;
+  }
+
+  .card .media.media--hover-effect > img + img,
+  .card-wrapper .media.media--hover-effect > img + img {
+    transition: opacity var(--duration-ui, 250ms) ease-out, transform var(--duration-ui, 250ms) ease-out;
   }
 
   .card:hover .media.media--hover-effect > img:first-child:only-child,
@@ -405,7 +411,6 @@
 
   .card-wrapper:hover .media.media--hover-effect > img + img {
     opacity: 1;
-    transition: transform var(--duration-long) ease;
     transform: scale(1.03);
   }
 

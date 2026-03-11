@@ -15,14 +15,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Coffee for those who care",
             "heading_size": "h0"
+          }
+        },
+        "subtext": {
+          "type": "text",
+          "settings": {
+            "text": "Premium quality, made for you and your colleagues.",
+            "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop the collection",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
@@ -33,6 +40,7 @@
       },
       "block_order": [
         "heading",
+        "subtext",
         "button"
       ],
       "settings": {
@@ -54,7 +62,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Featured products",
+        "title": "Nurse Coffee collection",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -76,10 +84,103 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "rich_text_nurse": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_story": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Nurse Coffee story",
+            "heading_size": "h2"
+          }
+        },
+        "text_story": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium coffee for caregivers — nurses, healthcare workers, and your colleagues. We believe every cup can bring energy and warmth to long shifts.</p>"
+          }
+        }
+      },
+      "block_order": ["heading_story", "text_story"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_nurse": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_lifestyle": {
+          "type": "heading",
+          "settings": {
+            "heading": "For you and your colleagues",
+            "heading_size": "h2"
+          }
+        },
+        "text_lifestyle": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Convenient subscriptions and thoughtful gift sets. Explore the collection and find the perfect cup for you.</p>"
+          }
+        }
+      },
+      "block_order": ["heading_lifestyle", "text_lifestyle"],
+      "settings": {
+        "image": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_nurse": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_newsletter": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay in the loop",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_newsletter": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get offers and updates from Nurse Coffee.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": ["heading_newsletter", "paragraph_newsletter", "email_form"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "rich_text_nurse",
+    "image_with_text_nurse",
+    "newsletter_nurse"
   ]
 }

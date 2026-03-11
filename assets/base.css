@@ -9,7 +9,10 @@
   /* D4-03: UI transition 200–300ms for interactions */
   --duration-ui: 250ms;
   /* D4-01: Border/radius consistency — card, button, input use --*-radius in theme settings */
+  /* D4-02: :focus-visible and .focus-inset/.focus-offset below; button focus in component-button */
+  /* D4-03: --duration-ui 250ms for transitions; button/thumbnail use var(--duration-ui) or --duration-default */
   /* D1-01: Color & typography — override --font-heading-*, --color-* in Theme settings for brand */
+  /* Nurse Coffee palette (Admin → Theme settings → Colors): background #F5F0E8, text #3D3229, button #8B6914, button_label #FFFBF5, secondary_button_label #3D3229; or use scheme-2 with warm tweaks */
 }
 
 .product-card-wrapper .card,
@@ -1169,6 +1172,7 @@ summary::-webkit-details-marker {
 
 .media.media--hover-effect > img + img {
   opacity: 0;
+  /* transition set in component-card.css for desktop hover */
 }
 
 @media screen and (min-width: 990px) {

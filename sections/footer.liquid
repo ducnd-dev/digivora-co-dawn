@@ -297,6 +297,7 @@
         {%- endif -%}
       </div>
       <div class="footer__column footer__column--info">
+        {%- comment -%} T3-04: Trust badge — payment icons; enable in Theme Editor → Footer → Show payment icons {%- endcomment -%}
         {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
